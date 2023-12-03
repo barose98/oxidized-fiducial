@@ -1,0 +1,65 @@
+attrs : 
+{
+    bcdUSB = 0x200;
+    bDeviceClass = 0x0;
+    bDeviceSubClass = 0x0;
+    bDeviceProtocol = 0x0;
+    bMaxPacketSize0 = 0x40;
+    idVendor = 0x1D6B;
+    idProduct = 0x104;
+    bcdDevice = 0x100;
+};
+os_descs : 
+{
+    use = 0;
+    qw_sign = "";
+    b_vendor_code = 0x0;
+};
+strings = ( 
+    {
+        lang = 0x409;
+        manufacturer = "Yancey Gadget";
+        product = "Oxidized Fiducial USB Device";
+        serialnumber = "fedcba9876543210";
+    } );
+functions : 
+{
+    hid_usb0 : 
+    {
+        instance = "usb0";
+        type = "hid";
+        attrs : 
+        {
+            dev : 
+            {
+                major = 240;
+                minor = 0;
+            };
+            protocol = 1;
+            report_desc = ( 0x5, 0x1, 0x9, 0x2, 0xA1, 0x1, 0x9, 0x1, 0xA1, 0x0, 0x5, 0x9, 0x19, 0x1, 0x29, 0x3, 0x15, 0x0, 0x25, 0x1, 0x95, 0x3, 0x75, 0x1, 0x81, 0x2, 0x95, 0x1, 0x75, 0x5, 0x81, 0x3, 0x5, 0x1, 0x9, 0x30, 0x9, 0x31, 0x15, 0x81, 0x25, 0x7F, 0x75, 0x8, 0x95, 0x2, 0x81, 0x6, 0xC0, 0xC0 );
+            report_length = 3;
+            subclass = 1;
+        };
+        os_descs = ( );
+    };
+};
+configs = ( 
+    {
+        id = 1;
+        name = "c";
+        attrs : 
+        {
+            bmAttributes = 0x80;
+            bMaxPower = 0xFA;
+        };
+        strings = ( 
+            {
+                lang = 0x409;
+                configuration = "Config 1: ECM network";
+            } );
+        functions = ( 
+            {
+                name = "hid.usb0";
+                function = "hid_usb0";
+            } );
+    } );

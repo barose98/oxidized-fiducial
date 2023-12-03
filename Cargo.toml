@@ -1,0 +1,11 @@
+[package]
+name = "oxidized-fiducial"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+char-device = "0.16.3"
+#opencv = "0.86.1"
+#v4l = "0.14.0"
