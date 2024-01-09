@@ -6,6 +6,22 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-char-device = "0.16.3"
-opencv = "0.86.1"
-#v4l = "0.14.0"
+panic-halt = "0.2.0"
+cortex-m-rt = { version = "0.7.0"}
+ufmt = "0.1"
+rtt-target = { version = "*", features = [ "cortex-m" ] }
+
+#icm20948_driver = { version = "0.2.0" , git = "https://github.com/barose98/icm20948_driver.git" , branch="exper" , default-features = false , features=[ "defmt-serial" ]}
+icm20948 = "0.0.1"
+bit-byte-structs = { git = "https://gitlab.com/pointswaves/bit-byte-structures.git" }
+embedded-hal = "0.2.7"
+
+[dependencies.ambiq-hal]
+version = "*"
+features = ["ambiq-sdk", "sparkfun-redboard-artemis-atp", "rt"]
+
+[patch.crates-io]
+ambiq-hal = { path = "./ambiq-rs/ambiq-hal" }
+ambiq-hal-sys = { path = "./ambiq-rs/ambiq-hal-sys" }
+
+#

@@ -1,0 +1,4 @@
+[submodule "ambiq-rs"]
+	path = ambiq-rs
+	url = https://github.com/barose98/ambiq-rs.git
+	branch = atp
