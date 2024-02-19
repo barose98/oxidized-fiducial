@@ -6,7 +6,14 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-char-device = "0.16.3"
+char-device = {version = "0.16.3", optional = true}
+quaternion-core = "0.5.0"
 serialport = "4.3.0"
-assert_hex = "0.4.1"
+xdotool = {version = "0.0.2", optional = true}
 #opencv = "0.86.1"
+
+[features]
+#default=["debug"]
+debug=[]
+xdo=["dep:xdotool"]
+mouse=["dep:char-device"]
